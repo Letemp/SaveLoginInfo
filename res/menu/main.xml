@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menu_settings"
+        android:title="@string/menu_settings"/>//注销菜单项
+     <item
+        android:id="@+id/exit"
+        android:title="@string/exit"/>//退出菜单项
+
+</menu>

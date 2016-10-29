@@ -1,0 +1,80 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >//垂直线性布局
+
+    //表格布局
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:layout_marginLeft="20dp">
+
+        <TableRow>
+
+            //用户名文本显示框
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="@string/name" />
+
+            //输入用户的文本编辑框
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="20dp">
+
+            //密码文本显示框
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:textSize="18sp"
+                android:text="@string/psd" />
+
+            <EditText
+                android:id="@+id/psd"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"/>//设置为密码框
+
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">//水平线性布局"
+
+        //“记住密码”复选框
+        <CheckBox
+            android:id="@+id/remenberPsd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"          
+            android:text="@string/remenber_psd" />
+        
+        //“自动登录”复选框
+        <CheckBox
+            android:id="@+id/autoLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/auto_login" />
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:textSize="20sp"  
+            android:text="@string/login"
+            android:gravity="center_vertical"/>
+
+    </LinearLayout>
+
+</LinearLayout>
