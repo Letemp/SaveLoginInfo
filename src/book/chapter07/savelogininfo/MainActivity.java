@@ -25,7 +25,7 @@ public class MainActivity extends Activity {
 	
 	
 	private Button login;// 登录按钮
-	private CheckBox remenberPsdBox,autoLoginBox;// 记住密码、自动登录复选框
+	private CheckBox rememberPsdBox,autoLoginBox;// 记住密码、自动登录复选框
 	private EditText name, psd;// 用户名和密码
 	private TextView userInfo;
 	SharedPreferences loginPreferences,accessPreferences;// 保存登录信息和访问次数
@@ -64,14 +64,14 @@ public class MainActivity extends Activity {
 		// TODO Auto-generated method stub
 		this.setContentView(R.layout.activity_main);//设置界面为登录界面
 		login = (Button)this.findViewById(R.id.login);
-		remenberPsdBox=(CheckBox)this.findViewById(R.id.remenberPsd);
+		rememberPsdBox=(CheckBox)this.findViewById(R.id.remenberPsd);
 		autoLoginBox=(CheckBox)this.findViewById(R.id.autoLogin);
 		name=(EditText)this.findViewById(R.id.name);
 		psd=(EditText)this.findViewById(R.id.psd);
 		if(isSavePsd){//如果获取的保存密码为true
 			psd.setText(userPsd);//设置密码框的值为保存的值
 			name.setText(userName);//显示用户名为保存的用户名
-			remenberPsdBox.setChecked(true);//设置“保存密码”复选框为选中状态	
+			rememberPsdBox.setChecked(true);//设置“保存密码”复选框为选中状态	
 		}
 		
 		
@@ -83,20 +83,14 @@ public class MainActivity extends Activity {
 				// TODO Auto-generated method stub
 				loginEditor.putString("name",name.getText().toString());//写入用户名
 				loginEditor.putString("psd",psd.getText().toString());//写入密码
-				loginEditor.putBoolean("isSavedPsd",remenberPsdBox.isChecked());
+				loginEditor.putBoolean("isSavedPsd",rememberPsdBox.isChecked());
 				loginEditor.putBoolean("isAutoLogin",autoLoginBox.isChecked());
 				loginEditor.commit();//提交写入的登录信息
 				MainActivity.this.setContentView(R.layout.activity_welcome);//切换到欢迎界面
-				userInfo=(TextView)this.findViewById(R.id.userInfo);
+				userInfo=(TextView)findViewById(R.id.userInfo);
 				userInfo.setText("欢迎您："+name.getText().toString()+",登录成功！");
 				
 			}
-
-			private TextView findViewById(int userinfo) {
-				// TODO Auto-generated method stub
-				return null;
-			}
-			
 		});
 		
 	}
